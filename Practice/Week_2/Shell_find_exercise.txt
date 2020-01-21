@@ -1,3 +1,4 @@
+1. cat timepoint_*/*.csv | grep "Adrian Clapp" timepoint_*/*.csv
 timepoint_010/price_adjustment_010.csv:Adrian Clapp,0.940851333034272,10
 timepoint_016/price_adjustment_016.csv:Adrian Clapp,0.94572938047782,16
 timepoint_028/price_adjustment_028.csv:Adrian Clapp,1.03278923151054,28
@@ -9,7 +10,7 @@ timepoint_079/price_adjustment_079.csv:Adrian Clapp,1.01119984669476,79
 timepoint_095/price_adjustment_095.csv:Adrian Clapp,0.957462875291386,95
 timepoint_098/price_adjustment_098.csv:Adrian Clapp,1.20145103517627,98
 
-$ cat timepoint_*/*.csv | sort | cut -f 1,1 -d "," | uniq
+2. cat timepoint_*/*.csv | sort | cut -f 1,1 -d "," | uniq
 Abram Walston
 Ada Tarrance
 Adrian Clapp
@@ -213,4 +214,5 @@ Winnifred Wilcoxon
 Zachariah Speer
 
 
-
+alias u='clear; cd ../; pwd; ls -lhGgo'
+alias d='clear; cd -; ls -lhGgo'
