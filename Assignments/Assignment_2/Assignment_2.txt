@@ -5,7 +5,8 @@ wc -l ../../../../Data/data-shell/data/pdb/m*.pdb > ../../../../../Data_Course_R
 3.
 cut -f 2 -d "," ../../../Data/data-shell/data/animals.txt | sort | uniq
 4.
-cut -f 5 -d "," ../Data/BioLog_Plate_Data.csv | sort | uniq | > ../../Data_Course_RAAB/Assignments/Assignment_2/unique_C-substrates.txt
+ccut -f 5 -d "," ../Data/BioLog_Plate_Data.csv | sort | uniq  > ../../Data_Course_RAAB/Assignments/Assignment_2/unique_C-substrates.txt
 5.
 wc -l *.txt| sort -n | tail -2 | head -1
 6.
+$ for i in ~/Desktop/Data_Course/Data/data-shell/many_files/*/data/*.txt ; do bash ~/Desktop/Data_Course/Data/data-shell/scripts/sum_lines.sh $i; done  > ~/Desktop/Data_Course_RAAB/Assignments/Assignment_2/file_sums.txt
