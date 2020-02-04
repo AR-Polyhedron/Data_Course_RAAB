@@ -1,9 +1,15 @@
 library(tidyverse)
 # load some data
+
 data("iris")
 
-glimpse(iris)
+# subset
 
+glimpse(iris)
+iris <-iris %>% filter(Species == "virginica") #subset == Virginica
+
+#Plot Sepal. Lenght as y-axis; Petal.Lenth is X-axis
+#Colored points in scatter plot
 plot(y=iris$Sepal.Length, x=iris$Petal.Length, col=iris$Species, pch = 20, main="You're gonna hate iris beofre this is all done",ylab="Sepal Length",xlab="Petal Length")
 
 

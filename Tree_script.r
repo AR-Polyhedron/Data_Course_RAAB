@@ -39,5 +39,5 @@ plot(y=Loblolly$height, x=Loblolly$age, col=Loblolly$Seed,
      pch=19, main = "Trees Grow, yo!", xlab = "Tree Age", ylab = "Tree Height")
 plot(x=Loblolly$Seed, y=Loblolly$height)
 
-table(Loblolly$seed,Loblolly$age)
+table(Loblolly$Seed,Loblolly$age)
 plot (x=Loblolly$Seed,y=Loblolly$age)
