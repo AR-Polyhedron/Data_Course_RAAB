@@ -11,14 +11,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # **Assignment 4**
 
-In this assignment, you will use R (within R-Studio) to:
+#In this assignment, you will use R (within R-Studio) to:
 
-+ Use several methods to load external data files into R
-+ Explore parameters available for customizing the way data is read from a file
-+ Use base R tools to view attributes of data sets
-+ Perform simple summary statistics
-+ Use the built-in visualization methods to quickly look at relationships in your data
-+ Demonstrate one method for saving visualizations to an image file
+#+ Use several methods to load external data files into R
+#+ Explore parameters available for customizing the way data is read from a file
+#+ Use base R tools to view attributes of data sets
+#+ Perform simple summary statistics
+#+ Use the built-in visualization methods to quickly look at relationships in your data
+#+ Demonstrate one method for saving visualizations to an image file
 
 **All file paths should be relative, starting from the Assignment_4 directory!! (where you found this file)**
 
@@ -27,41 +27,45 @@ In this assignment, you will use R (within R-Studio) to:
 
 ## **For credit...**
 
-1.  Push a completed version of your Rproj and R-script (details at end of this assignment) to GitHub
-2.  Your score will also depend on whether any files generated in this workflow are found in your repository
-3.  Upload a copy of a plaintext file with numbered answers to the **bolded** assignment questions to Canvas. This shows that you worked through the assignment and lets me know to pull a fresh copy of your GitHub repo to grade.
+#1.  Push a completed version of your Rproj and R-script (details at end of this assignment) to GitHub
+#2.  Your score will also depend on whether any files generated in this workflow are found in your repository
+#3.  Upload a copy of a plaintext file with numbered answers to the **bolded** assignment questions to Canvas. This shows that you worked through the assignment and lets me know to pull a fresh copy of your GitHub repo to grade.
 
 
 ____________
 
 
-It would be terribly inconvenient if R made us manually enter our data. Thankfully, there are dozens (hundreds?)
-of ways that we can read external data into R for analysis.  Most of the time the data we want to analyze comes
-in the form of an Excel spreadsheet.  There are special ways to import Excel spreadsheets directly, but typically
-we don't want to store our data as .xlsx because it's a large bloated file format. People who work with data in
-"rectangular" format (like a spreadsheet) often use a form called "comma-separated-values," or .csv
+#It would be terribly inconvenient if R made us manually enter our data. Thankfully, there are dozens (hundreds?)
+#of ways that we can read external data into R for analysis.  Most of the time the data we want to analyze comes
+#in the form of an Excel spreadsheet.  There are special ways to import Excel spreadsheets directly, but typically
+#we don't want to store our data as .xlsx because it's a large bloated file format. People who work with data in
+#"rectangular" format (like a spreadsheet) often use a form called "comma-separated-values," or .csv
 
 
-We will use the built-in function read.table() to load some data.
+#We will use the built-in function read.table() to load some data.
 
 ```{r, echo=TRUE}
 ?read.table() #This brings up the help file
 df = read.csv("../../Data/landdata-states.csv") # why did I change to read.csv ???
+#so it would load as a csv file even if it wasn't originally
 class(df) # what type of object is df?
 head(df) # shows the first 6 elements of an object (first 6 rows if you give it a data frame)
 ```
 
 
-Now, we have a data frame loaded into R as an object called "df."
-If you open that same file with a plain text editor you'd see a bunch of values separated by commas.
-The read.csv() function is a convenient way to tell R that those commas represent different values and each "\\n" (newline) character means a new row. It automatically treats the first row as column headers.  
+#Now, we have a data frame loaded into R as an object called "df."
+
+#If you open that same file with a plain text editor you'd see a bunch of values separated by commas.
+#The read.csv() function is a convenient way to tell R that those commas represent different values and each "\\n" (newline) character means a new row. It automatically treats the first row as column headers.  
 
 **Questions:**
 
   + **1. What other stuff does read.csv() do automatically?**
+  creates a dataframe, makes a working directory if one doesn't exist, all columns are read as characters.
   + **2. How is it different from read.csv2()?**
+  They're identical except it reads the data differently based on ; as separation rather than ,
   + **3. Why does read.csv2() even exist?**
-
+Cause european data entry 
 
 Now, I notice that each column in this data frame has its own class. Let's look at a couple
 ```{r, echo=TRUE}
@@ -72,8 +76,12 @@ class(df$Date)
 **Questions:**
 
   + **4. How could I change the parameters of read.csv() to make it so the class of the "State" column is "character" instead of "factor?"**
-
+  
+df2 = read.csv("../../Data/landdata-states.csv", as.is=1)
+class(df2$State)
+class(df2$Date)
 ____________
+
 
 
 Now, let's explore this data set a bit with basic descriptive stats...
@@ -87,8 +95,12 @@ summary(df) # summary() works differently for different data classes. Note how i
 **Questions:**
 
   + **5. What command would give the summary stats for ONLY the Home.Value column?**
+  ?summary
+  summary(df, digits = 4)
+  summary(subset(df,select=Home.Value))
   + **6. What value is returned by the command: names(df)[4]  ?**
-  
+  names(df)[4]
+  #Home.Value
 ____________
 
 
@@ -109,14 +121,21 @@ Note that the plot() function automatically tries to determine the best type of 
 **Questions:**
 
   + **7. What is happening when you add (...col=df\$region) to the above plotting code?**  
-  **In other words, what happens when you run: plot(x=df\$Year,y=df\$Land.Value,col=df\$region)**
   
+plot(x=df$Year,y=df$Land.Value,col=df$region)
+#colors it by region
+  
+  **In other words, what happens when you run: plot(x=df\$Year,y=df\$Land.Value,col=df\$region)**
+#Why all these fucking slashes they don't work?
 _______________
 
 # Now, for the rest of the assignment...
 
-1.  Create a new R script as part of your Assignment 4 R-project. Name it "Assignment_4.R"
-2.  That script should do the following:
+#1.  Create a new R script as part of your Assignment 4 R-project. Name it "Assignment_4.R"
+
+file.create("Assignment_4.R")
+
+#2.  That script should do the following:
     + Read in the file: "/Data/ITS_mapping.csv"   ...good luck with that, hahaha!
     + Somehow summarize all of the columns and do a bit of additional exploration (play with some functions)
     + Make a boxplot where "Ecosystem"" is on the x-axis and "Lat" is on the y-axis
