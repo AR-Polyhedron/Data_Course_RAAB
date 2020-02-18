@@ -217,4 +217,50 @@ ggplot(random_data, aes(x=x, y=y) ) +
 
 
 
+data("iris")
+ggplot(iris,aes(y=Petal.Length,x=Sepal.Length)) +
+  geom_point(aes(color=Species)) +
+  geom_smooth(method = "lm",aes(color=Species)) +
+  labs(title = "Sepal Length vs petal length",
+       subtitle = "for three iris species") +
+  theme_minimal()
+  
+
+
+ggplot(iris,aes(x=Petal.Width)) +
+ geom_density(aes(fill=Species,alpha=.5)) +
+  labs(title = "Distribution of Petal Widths"
+       ,subtitle = "for three iris species", x="Petal Width") +
+  theme_minimal()
+
+?geom_boxplot()
+
+ggplot(iris,aes(y=Petal.Width/Sepal.Width,x=Species)) +
+  geom_boxplot(aes(fill=Species)) +
+  labs(title = "Sepal- to Petal-Width Ratio"
+       ,subtitle = "for three iris species",
+       x="Species", y="Ratio of Sepal Width to Petal Width") +
+  theme_minimal()
+
+ggplot(iris,aes(y=Petal.Width/Sepal.Width,x=Species)) +
+  geom_boxplot(aes(fill=Species)) +
+  labs(title = "Sepal- to Petal-Width Ratio"
+       ,subtitle = "for three iris species",
+       x="Species", y="Ratio of Sepal Width to Petal Width") +
+  theme_minimal()
+
+ggplot(iris, aes(x=Sepal.Length-mean(Sepal.Length))) + 
+  geom_bar(stat='identity', aes(fill=Species), width=.5,y=Sepal.Length-mean(Sepal.Length))  +
+  labs(title="Sepal length deviance from the mean of all observations'", 
+       x= "Deviance from the Mean") + 
+  coord_flip()
+
+Sepal_mean <- iris$Sepal.Length - mean(iris$Sepal.Length)
+ggplot(iris, aes(x=Sepal.Length, y=Sepal_mean, fill=Species)) + 
+  geom_bar(stat='Identity',
+           position = position_dodge()) +
+  labs(title= "Sepal length deviance from the mean of all observations",
+       x=NULL) + 
+  theme_minimal() +
+  coord_flip()
 
