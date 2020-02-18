@@ -235,27 +235,35 @@ ggplot(iris,aes(x=Petal.Width)) +
 
 ?geom_boxplot()
 
+png("iris_fig1.png")
 ggplot(iris,aes(y=Petal.Width/Sepal.Width,x=Species)) +
   geom_boxplot(aes(fill=Species)) +
   labs(title = "Sepal- to Petal-Width Ratio"
        ,subtitle = "for three iris species",
        x="Species", y="Ratio of Sepal Width to Petal Width") +
   theme_minimal()
+dev.off()
 
+png("iris_fig2.png")
 ggplot(iris,aes(y=Petal.Width/Sepal.Width,x=Species)) +
   geom_boxplot(aes(fill=Species)) +
   labs(title = "Sepal- to Petal-Width Ratio"
        ,subtitle = "for three iris species",
        x="Species", y="Ratio of Sepal Width to Petal Width") +
   theme_minimal()
+dev.off()
 
+png("iris_fig3.png")
 ggplot(iris, aes(x=Sepal.Length-mean(Sepal.Length))) + 
   geom_bar(stat='identity', aes(fill=Species), width=.5,y=Sepal.Length-mean(Sepal.Length))  +
   labs(title="Sepal length deviance from the mean of all observations'", 
        x= "Deviance from the Mean") + 
   coord_flip()
+dev.off()
 
 Sepal_mean <- iris$Sepal.Length - mean(iris$Sepal.Length)
+
+png("iris_fig4.png")
 ggplot(iris, aes(x=Sepal.Length, y=Sepal_mean, fill=Species)) + 
   geom_bar(stat='Identity',
            position = position_dodge()) +
@@ -263,4 +271,4 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal_mean, fill=Species)) +
        x=NULL) + 
   theme_minimal() +
   coord_flip()
-
+dev.off()
