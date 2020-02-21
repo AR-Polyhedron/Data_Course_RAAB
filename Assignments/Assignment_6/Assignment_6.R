@@ -30,24 +30,11 @@ cat(max(mtcars$disp)) %>%
   cat(max(automatic_mtcars.csv$disp)) %>%
   cat(max(mt3$disp))
 
-t1 <- cat(max(mtcars$disp)) %>%
-  cat(max(automatic_mtcars.csv$disp)) %>%
-  cat(max(mt3$disp))
+hp_orig <- mtcars[which.max(mtcars$hp),]
+hp_200 <- mt3[which.max(mt3$hp),]
+hp_auto <- automatic_mtcars.csv[which.max(automatic_mtcars.csv$hp),]
 
-t1 <- summary(mtcars)
-t1
-summary(max(mtcars$disp))
-t1 <- summary(max(mtcars$disp))
-t1
+max_hp <- full_join(hp_orig,hp_200) %>% full_join(hp_auto)
 
-t1 <- summary(max(mtcars$disp)) 
-t1
-t2 <- summary(max(automatic_mtcars.csv$disp))
-t3 <- summary(max(mt3$disp))
-anti_join(t1+t2+t3)
-?anti_join
-t4
-table(t1,t2,t3)
+write.table(max_hp,"./hp_maximums.txt")
 
-write.table(mtcars, file = "", sep = "\t",
-            row.names = TRUE, col.names = NA)
