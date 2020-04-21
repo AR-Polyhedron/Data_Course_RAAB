@@ -1,5 +1,7 @@
 ---
-output: html_document
+output: 
+html_document:
+code_folding: hide
 pagetitle: Alex Raab Home
 ---
 <style type="text/css">
@@ -11,32 +13,22 @@ pagetitle: Alex Raab Home
 </style>
 
 <style>
-div.gray { background-color:#452627; border-radius: 5px; padding: 20px;}
+div.blue { background-color:#63a898; border-radius: 5px; padding: 20px;}
 </style>
-<div class = "gray">
+<div class = "blue">
 
 
 
 <style>
-div.blue { background-color:##3c6b69; border-radius: 0px; padding: 20px;}
+div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
 </style>
 <div class = "blue">
 
-## [HOME](http://gzahn.github.io/) | [ABOUT ME](http://gzahn.github.io/about-me/) | [CV](http://gzahn.github.io/lab/) | [PROGRAMMING](http://gzahn.github.io/pubs-and-pres/) | [RESEARCH](http://gzahn.github.io/blog-archive/) 
+
+## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) 
 
 # **ALEXANDER RAAB**
 
-<div style= "float:right;position: relative;top:20px">
-```{r, out.width = "600px",echo=FALSE}
-knitr::include_graphics("./wp-content/uploads/geoff_nap.jpg")
-```
-
-<br><br><br><br><br><br><br><br><br>
-<br><br><br>
-
-</div>
-
-___
 
 <br>
 
@@ -46,7 +38,7 @@ ___
 ### 801-472-7717<br>
 ### 10651040@my.uvu.edu<br>
 ### alexraab1@gmail.com
-<br><br><br>
+<br><br><br><br><br><br><br><br><br>
 
 </div>
 

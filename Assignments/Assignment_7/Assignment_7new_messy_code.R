@@ -8,23 +8,26 @@
 
 
 library(tidyverse)
+library(dplyr)
 
 ##########################
 #        Part 1          #
 ##########################
 
 # load data (wide format)
-utah = read.csv("Data/Utah_Religions_by_County.csv")
+utah = read.csv("../../Data/Utah_Religions_by_County.csv")
 
 # subset to only counties with buddhists observed
-buddhist = utah[utah$Buddhism.Mahayana > 0,]
+#buddhist = utah[utah$Buddhism.Mahayana > 0,]
+buddhist <- filter(utah, Buddhism.Mahayana >0)
 
 # order rows by population (descending)
-buddhist = buddhist[order(buddhist$Pop_2010, decreasing = TRUE),]
+#buddhist = buddhist[order(buddhist$Pop_2010, decreasing = TRUE),]
 
+buddhist2 <- arrange(buddhist, desc(Pop_2010))
 
 # write this new dataframe to a file
-write.csv(buddhist, file = "./buddhist_counties.csv", row.names = FALSE, quote = FALSE)
+write.csv(buddhist2, file = "./buddhist_counties.csv", row.names = FALSE, quote = FALSE)
 
 ## get group summaries of religiousity based on population ##
 
@@ -34,28 +37,33 @@ groups = kmeans(utah$Pop_2010,6) # clusters data into 6 groups based on proximit
 utah$Pop.Group = groups$cluster # assigns a new variable to utah giving group for each county
 
 # subset to each group and find summary stats on Religiosity for each
-group1 = mean(utah[utah$Pop.Group == 1,]$Religious)
-group2 = mean(utah[utah$Pop.Group == 2,]$Religious)
-group3 = mean(utah[utah$Pop.Group == 3,]$Religious)
-group4 = mean(utah[utah$Pop.Group == 4,]$Religious)
-group5 = mean(utah[utah$Pop.Group == 5,]$Religious)
-group6 = mean(utah[utah$Pop.Group == 6,]$Religious)
+#group1 = mean(utah[utah$Pop.Group == 1,]$Religious)
+#group2 = mean(utah[utah$Pop.Group == 2,]$Religious)
+#group3 = mean(utah[utah$Pop.Group == 3,]$Religious)
+#group4 = mean(utah[utah$Pop.Group == 4,]$Religious)
+#group5 = mean(utah[utah$Pop.Group == 5,]$Religious)
+#group6 = mean(utah[utah$Pop.Group == 6,]$Religious)
+
+utah %>%
+  group_by(Pop.Group) %>% summarize(mean=mean(Religious))
 
 # same, but mean population
-group1.pop = mean(utah[utah$Pop.Group == 1,]$Pop_2010)
-group2.pop = mean(utah[utah$Pop.Group == 2,]$Pop_2010)
-group3.pop = mean(utah[utah$Pop.Group == 3,]$Pop_2010)
-group4.pop = mean(utah[utah$Pop.Group == 4,]$Pop_2010)
-group5.pop = mean(utah[utah$Pop.Group == 5,]$Pop_2010)
-group6.pop = mean(utah[utah$Pop.Group == 6,]$Pop_2010)
+#group1.pop = mean(utah[utah$Pop.Group == 1,]$Pop_2010)
+#group2.pop = mean(utah[utah$Pop.Group == 2,]$Pop_2010)
+#group3.pop = mean(utah[utah$Pop.Group == 3,]$Pop_2010)
+#group4.pop = mean(utah[utah$Pop.Group == 4,]$Pop_2010)
+#group5.pop = mean(utah[utah$Pop.Group == 5,]$Pop_2010)
+#group6.pop = mean(utah[utah$Pop.Group == 6,]$Pop_2010)
 
+
+aggregate(Pop_2010 ~ Pop.Group, data = utah, mean)
 
 # make data frame of each group and mean religiosity
 religiosity = data.frame(Pop.Group = c("group1","group2","group3","group4","group5","group6"),
            Mean.Religiosity = c(group1,group2,group3,group4,group5,group6),
            Mean.Pop = c(group1.pop,group2.pop,group3.pop,group4.pop,group5.pop,group6.pop))
 
-
+df2 <- 
 
 
 religiosity # take quick look at resulting table

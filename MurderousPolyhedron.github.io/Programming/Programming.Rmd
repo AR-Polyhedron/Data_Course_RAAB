@@ -1,0 +1,37 @@
+---
+output: 
+html_document:
+code_folding: hide
+pagetitle: Programming
+---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.blue { background-color:#63a898; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+
+<style>
+div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) 
+
+So I am like waaaaaaaaaaaaaaaaaaaay behind on the class so this is a work in progress. Current state of things:
+
+
+![](https://media.giphy.com/media/RfvBXK1m8Kcdq/giphy.gif)
+
+Soon this page will be displaying my Final project to demonstrate my programming skills along with the link to my full semester's work for those not in the class looking into my skills. Until then I'll be working.
+
+![](https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif)
