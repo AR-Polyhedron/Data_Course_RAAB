@@ -2,7 +2,9 @@
 title: "Assignment 9"
 author: "gzahn"
 date: "March 23, 2019"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
   
 ```{r setup, include=FALSE}
@@ -40,3 +42,84 @@ ____________
 + Document your data explorations, figures, and conclusions in a reproducible R-markdown report
 + Upload your **self-contained** R project, including knitted report, to GitHub in *your* Assignment_9 directory
 
+```{r, eval=TRUE, include=TRUE, echo=TRUE, message=FALSE}
+library(modelr)
+library(broom)
+library(dplyr)
+library(fitdistrplus)
+library(tidyr)
+library(tidyverse)
+#Just loading my librarys for the assignment
+```
+
+```{r}
+df <- read.csv("../../Data/GradSchool_Admissions.csv")
+summary(df)
+class(df$admit)
+class(df$gre)
+class(df$gpa)
+class(df$rank)
+#Loading in the data along with getting a look at it
+```
+```{r}
+ggplot(df,aes(x=gpa, y=gre, color=admit)) + geom_point()
+ggplot(df,aes(x=gpa, y=gre, color=rank)) + geom_point()
+ggplot(df,aes(x=gpa, y=gre)) + geom_point() + facet_wrap(~admit)
+ggplot(df,aes(x=gpa, y=gre, color=rank)) + geom_point() + facet_wrap(~admit)
+#Visualizing the data to see what influences what. To be honest this data is already looking pretty all over. The best I can see  is gre score is influenced by gpa. yest that is obvious but Rank of school and admittance doesn't really see to be influenced.
+```
+
+```{r}
+df2 <- filter(df, admit==1)
+df3 <- filter(df, admit==0)
+summary(df2)
+summary(df3)
+#We had to tidy the data so I did, also this made it easier to look at if admitance was affected by the other data.
+```
+
+```{r}
+ggplot(df2,aes(x=gpa, y=gre, color=rank)) +geom_point()
+ggplot(df3,aes(x=gpa, y=gre, color=rank)) +geom_point()
+#Nope admitance really doesn't seem to matter at all. It may be that no admitance has more data points but GRE and GPA really doesn't seem to matter and Rank is randomly distributed everywhere
+```
+
+```{r}
+mod1 <- lm(gre~gpa, data = df2)
+mod2 <- lm(gre~gpa, data = df3)
+summary(mod1)
+summary(mod2)
+#Making simple models for simple data and taking a peak at them
+```
+```{r}
+plot(df2$gre~df2$gpa)
+abline(mod1)
+plot(df3$gre~df3$gpa)
+abline(mod1)
+mean(mod1$residuals^2)
+mean(mod2$residuals^2)
+#The model lines seem to be doing quite well, though it's an easy trend to replicate
+```
+```{r}
+preds1 <- add_predictions(df2,mod1)
+preds2 <- add_predictions(df3,mod2)
+preds1[50:65,c(2,3)]
+preds2[50:65,c(2,3)]
+#Oddly enough non admitted students seem to follow the trend better than admitted students based on the predictions
+```
+```{r}
+df2.1 = data.frame(gpa = c(800,620,620,540,640))
+predictions1 = predict(mod1, newdata = df2.1)
+
+df3.1 = data.frame(gpa = c(720,560,530,700,620))
+predictions2 = predict(mod2, newdata = df3.1)
+
+
+{plot(df2$gre ~ df2$gpa)
+points(x=df2.1$gpa,y=predictions1, col="Red")
+abline(mod1)}
+
+{plot(df3$gre ~ df3$gpa)
+points(x=df3.1$gpa,y=predictions2, col="Red")
+abline(mod2)}
+#Just finishing up the analysis, my conclusion from this data is that gpa is correlated with gre of non admitted students. Everything else doesn't seem to influence the other, the same trend is in admitted students but less so. Also I have no clue why the red isn't showing and don't know what to do to fix it.
+```

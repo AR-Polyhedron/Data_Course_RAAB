@@ -1,0 +1,192 @@
+---
+title: "Exam_3"
+output: html_document
+code_folding: hide
+---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+<style>
+div.blue { background-color:#63a898; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+
+<style>
+div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) |
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(modelr)
+library(broom)
+library(dplyr)
+library(fitdistrplus)
+library(tidyr)
+library(tidyverse)
+#Loading my libraries
+```
+
+### Loading the data in and taking in a summarry and getting a feel for the data, as if it is the first time playing with it.
+
+```{r}
+df <- mtcars
+summary(mtcars)
+class(df$mpg)
+class(df$cyl)
+class(df$disp)
+class(df$hp)
+class(df$drat)
+class(df$wt)
+class(df$qsec)
+class(df$vs)
+class(df$am)
+class(df$gear)
+class(df$carb)
+```
+
+### Visualizing the data
+
+```{r}
+ggplot(df,aes(y=mpg, x=cyl)) + geom_point()
+ggplot(df,aes(y=mpg, x=disp)) + geom_point()
+ggplot(df,aes(y=mpg, x=hp)) + geom_point()
+ggplot(df,aes(y=mpg, x=drat)) + geom_point()
+ggplot(df,aes(y=mpg, x=wt)) + geom_point()
+ggplot(df,aes(y=mpg, x=qsec)) + geom_point()
+ggplot(df,aes(y=mpg, x=gear)) + geom_point()
+ggplot(df,aes(y=mpg, x=carb)) + geom_point()
+```
+
+### So I want to keep things interesting and not do the same stuff with mtcars we have always done. I will be looking at drat and qsec and since I know you want some tidying of data I will filter it out based on if it has a v shaped engine or not.
+
+```{r}
+df2 <- filter(df, vs == 0)
+df3 <- filter(df, vs == 1)
+ggplot(df2,aes(y=mpg, x=drat)) + geom_point()
+ggplot(df2,aes(y=mpg, x=qsec)) + geom_point()
+ggplot(df3,aes(y=mpg, x=drat)) + geom_point()
+ggplot(df3,aes(y=mpg, x=qsec)) + geom_point()
+plot(df2$mpg ~ df2$drat+df2$qsec)
+plot(df3$mpg ~ df3$drat+df3$qsec)
+plot(df2$mpg ~ df2$drat:df2$qsec)
+plot(df3$mpg ~ df3$drat:df3$qsec)
+```
+
+### Making models of it all now along with getting some summaries of the models
+
+```{r}
+mod1 <- lm(mpg~drat+qsec, data = df2)
+mod1.2 <- lm(mpg~drat:qsec, data = df2)
+mod2 <- lm(mpg~drat+qsec, data = df3)
+mod2.2 <- lm(mpg~drat:qsec, data = df3)
+summary(mod1)
+summary(mod1.2)
+summary(mod2)
+summary(mod2.2)
+```
+
+### Testing the models against the plots to see how well they fit
+
+```{r}
+plot(df2$mpg ~ df2$drat)
+abline(mod1)
+abline(mod1.2)
+plot(df2$mpg ~ df2$qsec)
+abline(mod1)
+abline(mod1.2, col="Blue")
+plot(df3$mpg ~ df3$drat)
+abline(mod2)
+abline(mod2.2, col="Blue")
+plot(df3$mpg ~ df3$qsec)
+abline(mod2)
+abline(mod2.2, col="Blue")
+```
+
+### Whelp the only one that worked was mod2 on mpg ~ drat for the straight shaped engines. Lets see if making some models of just drat or qsec works.
+
+```{r}
+mod3 <- lm(mpg~drat, data = df2)
+mod3.2 <- lm(mpg~qsec, data = df2)
+mod4 <- lm(mpg~drat, data = df3)
+mod4.2 <- lm(mpg~qsec, data = df3)
+mod5 <- lm(mpg~drat/qsec, data = df2)
+mod6<- lm(mpg~drat/qsec, data = df3)
+summary(mod3)
+summary(mod3.2)
+summary(mod4)
+summary(mod4.2)
+summary(mod5)
+summary(mod6)
+```
+
+### Going to visualize the new models and see if they are working
+
+```{r}
+plot(df2$mpg ~ df2$drat)
+abline(mod3)
+abline(mod3.2)
+plot(df2$mpg ~ df2$qsec)
+abline(mod3)
+abline(mod3.2, col="Blue")
+plot(df3$mpg ~ df3$drat)
+abline(mod4)
+abline(mod4.2, col="Blue")
+plot(df3$mpg ~ df3$qsec)
+abline(mod4)
+abline(mod4.2, col="Blue")
+plot(df2$mpg ~ df2$drat)
+abline(mod5)
+plot(df2$mpg ~ df2$qsec)
+abline(mod5)
+plot(df3$mpg ~ df3$drat)
+abline(mod6)
+plot(df3$mpg ~ df3$qsec)
+abline(mod6)
+```
+
+### Well some of these are working at least.Looks like Mod3 for mpg~qsec of df2,Mod4 for mpg~drat of df3, mod4.2 for mpg~qsec of df3, mod6 for mpg~qsec of df3 all worked. So now to look at their accuracy with the residuals along with Mod2 for mpg ~ drat of df3
+
+```{r}
+mean(mod2$residuals^2)
+mean(mod3$residuals^2)
+mean(mod4$residuals^2)
+mean(mod4.2$residuals^2)
+mean(mod6$residuals^2)
+```
+
+### Smallest value is Mod3 which applied to mpg~qsec of df2 the next one being Mod2 for for mpg ~ drat of df3. So we will test out predictions on those for the data sets
+
+```{r}
+preds1 <- add_predictions(df2,mod3)
+preds2 <- add_predictions(df3,mod2)
+preds1[5:10,c(1,7)]
+preds2[5:10,c(1,5,7)]
+```
+
+### I would finish my analysis with the following code but it keeps giving me a strange error. Please save my Exam 3 Dr. Zahn, you're my only hope.
+#df2.1 = data.frame(mpg = c(16.4,17.3,15.2,10.4,10.4,14.7))
+#predictions1 = predict(mod3, newdata = df2.1)
+
+#df3.1 = data.frame(mpg = c(22.8,19.2,17.8,32.4,30.4,33.9))
+#predictions2 = predict(mod2, newdata = df3.1)
+
+
+#{plot(df2$mpg ~ df2$qsec)
+#points(x=df2.1$mpg,y=predictions1, col="Red")
+#abline(mod3)}
+
+#{plot(df3$mpg ~ df3$drat)
+#points(x=df3.1$mpg,y=predictions2, col="Red")
+#abline(mod2)}
+

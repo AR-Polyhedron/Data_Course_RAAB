@@ -177,7 +177,7 @@ _____________
 ```{r}
 # Make a new dataframe with the predictor values we want to assess
 # mod1 only has "disp" as a predictor so that's what we want to add here
-newdf = data.frame(disp = c(500,600,700,800,900))
+newdf = data.frame(disp = c(500,600,700))
 predictions = predict(mod1, newdata = newdf)
 
 # plot those predictions on our original graph
