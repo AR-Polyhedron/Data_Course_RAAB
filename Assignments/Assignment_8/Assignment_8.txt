@@ -1,0 +1,4 @@
+1.  Are any of your predicted response values from your best model scientifically meaningless? Explain.
+Like all of them,none of them hit the mark. Well some do but most are off and the line is completely off as well.
+2.  In your plots, did you find any non-linear relationships?  If so, do a bit of research online and give a link to at least one resource explaining how to deal with this in R
+https://dataconomy.com/2017/08/nonlinear-least-square-nonlinear-regression-r/
