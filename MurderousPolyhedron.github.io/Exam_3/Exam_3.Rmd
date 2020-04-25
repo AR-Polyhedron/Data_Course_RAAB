@@ -170,23 +170,28 @@ mean(mod6$residuals^2)
 ```{r}
 preds1 <- add_predictions(df2,mod3)
 preds2 <- add_predictions(df3,mod2)
-preds1[5:10,c(1,7)]
+preds1[5:10,c(1,5)]
 preds2[5:10,c(1,5,7)]
 ```
 
-### I would finish my analysis with the following code but it keeps giving me a strange error. Please save my Exam 3 Dr. Zahn, you're my only hope.
-#df2.1 = data.frame(mpg = c(16.4,17.3,15.2,10.4,10.4,14.7))
-#predictions1 = predict(mod3, newdata = df2.1)
+```{r}
+df2.1 = data.frame(mpg = c(16.4,17.3,15.2,10.4,10.4,14.7),
+                   drat = c(3.07,3.07,3.07,2.93,3.00,3.23))
+predictions1 = predict(mod3, newdata = df2.1)
 
-#df3.1 = data.frame(mpg = c(22.8,19.2,17.8,32.4,30.4,33.9))
-#predictions2 = predict(mod2, newdata = df3.1)
+df3.1 = data.frame(mpg = c(22.8,19.2,17.8,32.4,30.4,33.9),
+                   drat = c(3.92,3.92,3.92,4.08,4.93,4.22),
+                   qsec = c(22.90,18.30,18.90,19.47,18.52,19.90))
+predictions2 = predict(mod2, newdata = df3.1)
 
 
-#{plot(df2$mpg ~ df2$qsec)
-#points(x=df2.1$mpg,y=predictions1, col="Red")
-#abline(mod3)}
+{plot(df2$mpg ~ df2$qsec)
+points(x=df2.1$mpg,y=predictions1, col="Red")
+abline(mod3)}
 
-#{plot(df3$mpg ~ df3$drat)
-#points(x=df3.1$mpg,y=predictions2, col="Red")
-#abline(mod2)}
+{plot(df3$mpg ~ df3$drat)
+points(x=df3.1$mpg,y=predictions2, col="Red")
+abline(mod2)}
+```
 
+### Well I still seem to be flubbing the end of building models. Model 3 got prediction values on there but no line. The Predictions at least close to actual points, one even being on top of another. Model 2 none of the predictions got on there but the line did. So I would say there are trends with V shaped engines being correllated with drat. Along with straight engines being correlated with drat and qsec. However due to the poor modeling no real conclusion can be made.
