@@ -25,19 +25,18 @@ div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
 <div class = "blue">
 
 
-## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) 
+## [HOME](http://AR-Polyhedron.github.io/) | [ABOUT ME](http://AR-Polyhedron.github.io/About_Me/) | [CV](http://AR-Polyhedron.github.io/CV/) | [PROGRAMMING](http://AR-Polyhedron.github.io/Programming/) | [RESEARCH](http://AR-Polyhedron.github.io/Research/) 
 
 # Alexander Raab
 
 ### **Student**
 
-801-472-7717 | alexraab1@gmail.com |10651040@my.uvu.edu
+385-250-4434 | alexraab1@gmail.com |
 
 <br>
 
 ### **Summary**
-I have worked several customer service jobs throughout my years. I have always left my employer's and customers satisfied with my work. I have also performed quite well in my volunteer work. All while working towards a Bachelor's in Biology. I am close to finishing my degree at the Utah Valley University Biology Program. I have held two research posistions within their Microbiology labortory, the first and current under the Mentorship of Dr. Lauren Brooks and the 2nd under Dr. Geoffrey Zahn. I have recieved research funding twice from my research proposals as both an individual and as a research team with fellow students. I am also ~~skilled~~ able to scrap by with the R programming language.
-
+During my schooling I worked a number of customer service job. Through this work history I developed a strong sense of working with a team, and excelling in a stressful environment. My skills are best exemplified within a laboratory setting. During my education I interned primarily under Dr. Lauren Brooks, and secondarily under Dr. Geoffry Zahn, as a research student. During this time, I was twice awarded funding to pursue research. In which I conducted an ecological survey of the local fungi of Utah and to identify a Broad Host Range plasmid. Both included extensive work in Utah Valley University’s Microbiology lab, sterile procedure of a BSL-2 lab, culturing, electrophoresis, and real-time qPCR. I have prepared dozens of specimens to kept at Bean Life Science Museum Reptile and Amphibian research collection. I also have over six months experience with the programming language R, my work with it can be seen above in Programming.
 <br>
 
 ### **Experience**
@@ -49,22 +48,21 @@ I have worked several customer service jobs throughout my years. I have always l
 
 * **Day-care Worker**, Self-employed, Pleasant Grove, Utah 2017-2017
 
-* **Student Researcher**, Utah Valley University, Orem, Utah 2018-Current
-
 * **Customer Email Team**, Vetora llc, Orem, Utah 2019-2020
 
+* **Student Researcher**, Utah Valley University, Orem, Utah 2018-2020
 <br>
 
 ### **Education**
 * **Associate's of Science**, Utah Valley University, Orem, Utah 2013-2018
 
-* **Bachelor’s**, Utah Valley University, Orem, Utah 2013-Current
+* **Bachelor’s**, Utah Valley University, Orem, Utah 2013-Anticipated 08/19/2020
 
 <br>
 
 ### **Community Service**
 
-**Secretary**, Utah Valley University, Pre-Veterinarian Medicine Club, Orem, Utah 2018-2019.I kept the minutes of meetings, participated in numerous club events such as fund raisers, service projects, and managed communications for the organization.
+**Secretary**, Utah Valley University, Pre-Veterinarian Medicine Club, Orem, Utah 2018-2019.I kept the minutes of meetings, participated in numerous club events such as fund raisers and service projects, and managed communications for the organization. 
 
 <br>
 

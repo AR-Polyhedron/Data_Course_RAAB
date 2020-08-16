@@ -25,13 +25,12 @@ div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
 <div class = "blue">
 
 
-## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) | [Exam 3](http://MurderousPolyhedron.github.io/Exam_3/)
+## [HOME](http://AR-Polyhedron.github.io/) | [ABOUT ME](http://AR-Polyhedron.github.io/About_Me/) | [CV](http://AR-Polyhedron.github.io/CV/) | [PROGRAMMING](http://AR-Polyhedron.github.io/Programming/) | [RESEARCH](http://AR-Polyhedron.github.io/Research/) 
 
-So I am like waaaaaaaaaaaaaaaaaaaay behind on the class so this is a work in progress. Current state of things:
+### [Data_Course](https://github.com/AR-Polyhedron/Data_Course_RAAB) [Exam 3](http://AR-Polyhedron.github.io/Exam_3/) | [Final](http://AR-Polyhedron.github.io/Final_Project/) 
 
+### Welcome to the begining of my Programming work.You should notice some additional links above now. The first belongs to the culminated work I did for the class that tought me R. The second and third links are to the last projects performed for the class and are made in RMarkdown, thus viewable on the site. Though fair warning to these, they are rough at parts. Especially the Final Project. I have not had the oppturnity to follow-up what I learned with new projects and refine my skills. However I hope to do so and to fill this section with much more. Though I still feel these demonstrate my skill and knowledge I have with the language so I offer them to be viewed. 
 
-![](https://media.giphy.com/media/RfvBXK1m8Kcdq/giphy.gif)
-
-Soon this page will be displaying my Final project to demonstrate my programming skills along with the link to my full semester's work for those not in the class looking into my skills. Until then I'll be working.
-
-![](https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif)
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>

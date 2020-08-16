@@ -25,18 +25,16 @@ div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
 <div class = "blue">
 
 
-## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) 
+## [HOME](http://AR-Polyhedron.github.io/) | [ABOUT ME](http://AR-Polyhedron.github.io/About_Me/) | [CV](http://AR-Polyhedron.github.io/CV/) | [PROGRAMMING](http://AR-Polyhedron.github.io/Programming/) | [RESEARCH](http://AR-Polyhedron.github.io/Research/) 
 
-# **ALEXANDER RAAB**
-
+### Welcome, I am Alexander Raab. This site has been created by myself for the purpose of demonstrating my skills in R Programming Language. As well to introduce myself to any potential employeers. If you are interested in my work in R, myself, or my work outside of R, feel free to visit any of the links above. To contact me use the following contact information. 
 
 <br>
 
 ## **Contact Info:**
 
-### ALEXANDER RAAB<br>
-### 801-472-7717<br>
-### 10651040@my.uvu.edu<br>
+### Alexander Raab<br>
+### 385-250-4434<br>
 ### alexraab1@gmail.com
 <br><br><br><br><br><br><br><br><br>
 

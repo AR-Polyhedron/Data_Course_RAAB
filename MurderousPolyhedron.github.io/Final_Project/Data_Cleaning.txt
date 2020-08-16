@@ -1,0 +1,14 @@
+library(lubridate)
+library(tidyverse)
+df <- read.csv("../UL_BiologicalData_1.csv")
+class(df$ActivityStartDate)
+df$ActivityStartDate <- as.Date(df$ActivityStartDate, format = "%m/%d/%Y")
+df2 <- subset(df, ActivityStartDate > "2016-05-24" & ActivityStartDate < "2017-08-26")
+df3 <- subset(df2,
+              select = c("ActivityStartDate","ActivityStartTime.Time",
+                         "ActivityEndDate","ActivityEndTime.Time",
+                         "ActivityDepthHeightMeasure.MeasureValue",
+                         "MonitoringLocationIdentifier",
+                         "ActivityLocation.LatitudeMeasure",
+                         "ActivityLocation.LongitudeMeasure"))
+write.csv(df3,file = "../UL_BiologicalData_cleaned_2.csv")

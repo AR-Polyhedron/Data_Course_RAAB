@@ -25,17 +25,28 @@ div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
 <div class = "blue">
 
 
-## [HOME](http://MurderousPolyhedron.github.io/) | [ABOUT ME](http://MurderousPolyhedron.github.io/About_Me/) | [CV](http://MurderousPolyhedron.github.io/CV/) | [PROGRAMMING](http://MurderousPolyhedron.github.io/Programming/) | [RESEARCH](http://MurderousPolyhedron.github.io/Research/) 
+## [HOME](http://AR-Polyhedron.github.io/) | [ABOUT ME](http://AR-Polyhedron.github.io/About_Me/) | [CV](http://AR-Polyhedron.github.io/CV/) | [PROGRAMMING](http://AR-Polyhedron.github.io/Programming/) | [RESEARCH](http://AR-Polyhedron.github.io/Research/) 
 
-<div style= "float:right;position: relative;top:20px">
+
+
+<div style= "float:left;position: relative;top:20px">
+```{r, out.width = "250px",echo=FALSE}
+knitr::include_graphics("../About_Me/UVU.png")
+```
+
+
+</div>
+
+### My name is Alexander Raab, I am born and raised in Utah Valley and currently a graduate of Utah Valley University. I have acquired an Associate's of Science in Biology and will be graduating with my Bachelor's in Biology on 8/19/2020.I hope to continue to grow my career by pursuing a Master's in the study of Genetics. Particularly Gene silencing mechanisms. As well as a career working within the lab. 
+<br><br>
+
+<div style= "float:left;position: relative;top:20px">
 ```{r, out.width = "250px",echo=FALSE}
 knitr::include_graphics("../About_Me/dice.png")
 ```
 </div>
 
-My name is Alexander Raab, I am born and raised in Utah Valley and currently a student at Utah Valley University. I have acquired an Associate's of Science in Biology and currently finishing my Bachelor's in Biology. For my CV, Programming, and Research experience please see their tabs above. 
-
-My Hobbies are vast as I grew up in a very nerd culture household. The main ones are General Gaming, Writing, Reading, Magic the Gathering, Warhammer 40k, and the culimiation of all my hobbies Table Top Role Playing Games. I grew up under the house of Game Manager of several systems and have grown to be one myself.Dungeon's and Dragon's 3rd and 5th edition being the primary one and what my Github is named after. I also have experience in Palladium Rifts, Call of Cthulu, Halo Mythic, Jojo's Bizzare Adventure (the d10 system, and several of the d20 systems), WarHammer 40k 8th edition. Several Star Wars themed systems, countless homebrews, and Kill Puppies for Satan. I am also quite the cook.
+### My Hobbies are broad as I grew up in a very nerd culture household. The main ones are General Gaming, Writing, Reading, Trading Card Games,and the culimiation of all my hobbies Table Top Role Playing Games. I grew up under the house of a Game Manager for several systems and have grown to be one myself.Dungeon's and Dragon's 3rd and 5th edition being the primary one and countless lesser known games. I am also quite the cook.
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
