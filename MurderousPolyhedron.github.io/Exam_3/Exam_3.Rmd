@@ -26,7 +26,8 @@ div.blue { background-color:#63a898; border-radius: 0px; padding: 20px;}
 
 ## [HOME](http://AR-Polyhedron.github.io/) | [ABOUT ME](http://AR-Polyhedron.github.io/About_Me/) | [CV](http://AR-Polyhedron.github.io/CV/) | [PROGRAMMING](http://AR-Polyhedron.github.io/Programming/) | [RESEARCH](http://AR-Polyhedron.github.io/Research/) 
 
-### [Data_Course](https://github.com/AR-Polyhedron/Data_Course_RAAB) [Exam 3](http://AR-Polyhedron.github.io/Exam_3/) | [Final](http://AR-Polyhedron.github.io/Final_Project/) 
+### [Data_Course](https://github.com/AR-Polyhedron/Data_Course_RAAB) | [Exam 3](http://AR-Polyhedron.github.io/Exam_3/) | [Final](http://AR-Polyhedron.github.io/Final_Project/) 
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
